@@ -730,22 +730,25 @@
 
     <div class="project-card">
       <div class="project-header">
-        <div class="project-name">PID Environmental Chamber</div>
+        <div class="project-name">Embedded Climate Controller (PID vs. Fuzzy-PID)</div>
         <div class="project-links">
-          <a href="https://github.com/ajc3xc/pid-chamber" class="icon-link" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/ajc3xc/control_systems_final_project" class="icon-link" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
       <p class="project-desc">
-        Designed and built a temperature- and humidity-controlled environmental chamber using
-        PID controllers, ESP32 microcontrollers, and a Mini PC running a local server. Includes
-        real-time sensor dashboards and MQTT-based actuator control for precise growth environment regulation.
+        Built a closed-loop environmental chamber on a Raspberry Pi 4 (ABE5009 — Control Systems in SmartAg).
+        Implemented both standard PID and a fuzzy gain-scheduled PID to control a MOSFET-switched heating
+        pad and fan inside a foam cooler. Modeled the thermal plant in Simulink and compared controllers
+        experimentally: fuzzy-PID achieved 3.6× faster rise time (51 s vs 187 s) but PID achieved tighter
+        steady-state regulation (±0.17 °C error vs −0.47 °C).
       </p>
       <div class="project-footer">
-        <span class="project-tag">ESP32</span>
-        <span class="project-tag">PID Control</span>
-        <span class="project-tag">MQTT</span>
+        <span class="project-tag">Raspberry Pi</span>
+        <span class="project-tag">PID / Fuzzy-PID</span>
         <span class="project-tag">Python</span>
-        <span class="project-tag">IoT</span>
+        <span class="project-tag">Simulink</span>
+        <span class="project-tag">DHT11</span>
+        <span class="project-tag">Embedded Control</span>
       </div>
     </div>
 
@@ -757,16 +760,42 @@
         </div>
       </div>
       <p class="project-desc">
-        Deployed a mesh wireless sensor network using XBee radios and Arduino nodes to collect
-        environmental telemetry (temperature, humidity, CO₂). Data is aggregated and pushed to
-        AWS for storage and visualization.
+        Designed and deployed a multi-node wireless sensor network (ABE6031) using XBee radios,
+        an Arduino Uno (Node 1: DHT11 + SGP30 eCO₂/TVOC + photoresistor), and an Elegoo MEGA 2560
+        (Node 2: DHT11 + photoresistor). A Raspberry Pi 4 gateway serialized all sensor CSVs, uploaded
+        8-channel telemetry to ThingSpeak every 20 s, and pushed Pi Camera images to Google Drive
+        via rclone every 60 s.
       </p>
       <div class="project-footer">
         <span class="project-tag">XBee</span>
         <span class="project-tag">Arduino</span>
-        <span class="project-tag">AWS</span>
+        <span class="project-tag">Raspberry Pi</span>
+        <span class="project-tag">SGP30 eCO₂/TVOC</span>
+        <span class="project-tag">ThingSpeak</span>
         <span class="project-tag">Python</span>
         <span class="project-tag">IoT</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-name">LabVIEW Signal Processing Pipeline</div>
+        <div class="project-links">
+        </div>
+      </div>
+      <p class="project-desc">
+        Developed a five-stage sensor signal processing pipeline in LabVIEW (ABE6031 Take-Home Final).
+        Stages: (1) Z-score outlier removal (σ = 2 threshold, replaced with prior value), (2) IIR
+        Butterworth lowpass filter at 400 Hz cutoff, (3) FFT spectral analysis with Hanning window and
+        Peak Magnitude measurement, (4) Fourier series reconstruction at 4 dominant frequencies
+        (~100, 200, 300, 401 Hz), and (5) RMS error = 4.84 between filtered and reconstructed signals.
+      </p>
+      <div class="project-footer">
+        <span class="project-tag">LabVIEW</span>
+        <span class="project-tag">Signal Processing</span>
+        <span class="project-tag">FFT / Fourier</span>
+        <span class="project-tag">Butterworth Filter</span>
+        <span class="project-tag">Instrumentation</span>
       </div>
     </div>
 
@@ -793,22 +822,24 @@
 
     <div class="project-card">
       <div class="project-header">
-        <div class="project-name">Circular RNA Bioinformatics</div>
+        <div class="project-name">DNABERT-2 Fine-tuning for DNA Error Correction</div>
         <div class="project-links">
-          <a href="https://github.com/ajc3xc/circrna-analysis" class="icon-link" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/ajc3xc/dnabert2-error-correction" class="icon-link" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
       <p class="project-desc">
-        Undergraduate research collaboration with Washington University analyzing circular RNA
-        expression in cancer cell lines. Used DNABERT2 language model embeddings and a full
-        RNA-seq pipeline (STAR alignment, CircExplorer, Trimmomatic) to identify cancer-associated
-        circRNA signatures.
+        Co-authored graduate ML project (CS6001 — Missouri S&T, w/ Luke Hendrickson) fine-tuning
+        DNABERT-2 for per-base DNA sequencing error detection. Synthesized 3.2 M 150 bp reads from
+        chr21 T2T reference with 10 % indel + 1 % substitution noise. Replaced softmax with
+        sigmoid multi-label output (dim = 150), applied LoRA, and fixed a Triton Flash Attention
+        matrix-transpose bug. Trained on NVIDIA A100 80 GB. F1: 0.651 → 0.995; Recall: 0.486 → 1.0.
       </p>
       <div class="project-footer">
-        <span class="project-tag">Python</span>
-        <span class="project-tag">DNABERT2</span>
-        <span class="project-tag">STAR</span>
-        <span class="project-tag">CircExplorer</span>
+        <span class="project-tag">PyTorch</span>
+        <span class="project-tag">DNABERT-2</span>
+        <span class="project-tag">LoRA</span>
+        <span class="project-tag">Flash Attention</span>
+        <span class="project-tag">CUDA / A100</span>
         <span class="project-tag">Bioinformatics</span>
       </div>
     </div>
