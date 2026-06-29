@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,476 +6,106 @@
   <title>Adam Camerer — Portfolio</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #0f1117;
-      --surface: #1a1d27;
-      --surface2: #222637;
-      --accent: #5b8dee;
-      --accent2: #7c5cbf;
-      --text: #e2e8f0;
-      --text-muted: #94a3b8;
-      --border: #2d3148;
-      --radius: 10px;
+      --bg: #0f1117; --surface: #1a1d27; --surface2: #222637;
+      --accent: #5b8dee; --accent2: #7c5cbf; --green: #3ecf8e; --amber: #f59e0b;
+      --text: #e2e8f0; --text-muted: #94a3b8; --border: #2d3148; --radius: 10px;
       --mono: 'Courier New', Courier, monospace;
     }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-    }
-
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-
-    /* ── NAV ── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(15, 17, 23, 0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 56px;
-    }
-
-    .nav-brand {
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--text);
-      letter-spacing: 0.03em;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.75rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-muted);
-      font-size: 0.875rem;
-      font-weight: 500;
-      transition: color 0.15s;
-    }
-
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(15,17,23,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .nav-brand { font-weight: 700; font-size: 1rem; color: var(--text); letter-spacing: 0.03em; }
+    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+    .nav-links a { color: var(--text-muted); font-size: 0.875rem; font-weight: 500; transition: color 0.15s; }
     .nav-links a:hover { color: var(--text); text-decoration: none; }
-
-    /* ── HERO ── */
-    .hero {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 6rem 2rem 5rem;
-    }
-
-    .hero-tag {
-      display: inline-block;
-      font-size: 0.78rem;
-      font-family: var(--mono);
-      color: var(--accent);
-      background: rgba(91, 141, 238, 0.1);
-      border: 1px solid rgba(91, 141, 238, 0.25);
-      border-radius: 4px;
-      padding: 0.2rem 0.65rem;
-      margin-bottom: 1.2rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: 1rem;
-    }
-
-    .hero h1 span {
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-sub {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      max-width: 580px;
-      margin-bottom: 2rem;
-    }
-
-    .hero-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.55rem 1.1rem;
-      border-radius: 7px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      transition: all 0.15s;
-      cursor: pointer;
-      border: none;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-    }
+    .hero { max-width: 900px; margin: 0 auto; padding: 6rem 2rem 5rem; }
+    .hero-tag { display: inline-block; font-size: 0.78rem; font-family: var(--mono); color: var(--accent); background: rgba(91,141,238,0.1); border: 1px solid rgba(91,141,238,0.25); border-radius: 4px; padding: 0.2rem 0.65rem; margin-bottom: 1.2rem; letter-spacing: 0.06em; text-transform: uppercase; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .hero h1 span { background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-sub { font-size: 1.15rem; color: var(--text-muted); max-width: 580px; margin-bottom: 2rem; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.55rem 1.1rem; border-radius: 7px; font-size: 0.875rem; font-weight: 600; transition: all 0.15s; cursor: pointer; border: none; }
+    .btn-primary { background: var(--accent); color: #fff; }
     .btn-primary:hover { background: #4a7de0; text-decoration: none; color: #fff; }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--text-muted);
-      border: 1px solid var(--border);
-    }
+    .btn-outline { background: transparent; color: var(--text-muted); border: 1px solid var(--border); }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
-
-    /* ── SECTIONS ── */
-    .section {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .section-label {
-      font-size: 0.75rem;
-      font-family: var(--mono);
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 0.5rem;
-    }
-
-    .section-title {
-      font-size: 1.75rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
-      letter-spacing: -0.01em;
-    }
-
-    /* ── ABOUT ── */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-    }
-
-    .about-text p {
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-    }
-
-    .about-meta dt {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      margin-top: 1rem;
-    }
-
-    .about-meta dd {
-      font-size: 0.95rem;
-      color: var(--text);
-    }
-
-    /* ── SKILLS ── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1rem;
-    }
-
-    .skill-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem 1.4rem;
-    }
-
-    .skill-card h3 {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
-      font-family: var(--mono);
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
-    .tag {
-      font-size: 0.78rem;
-      font-family: var(--mono);
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 0.2rem 0.5rem;
-      color: var(--text-muted);
-    }
-
-    /* ── PROJECTS ── */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .project-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      transition: border-color 0.15s, transform 0.15s;
-    }
-
-    .project-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    .project-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .project-name {
-      font-size: 1.05rem;
-      font-weight: 700;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 0.5rem;
-      flex-shrink: 0;
-    }
-
-    .icon-link {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      padding: 0.25rem 0.5rem;
-      border: 1px solid var(--border);
-      border-radius: 5px;
-      transition: all 0.15s;
-    }
-
-    .icon-link:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .project-desc {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      flex: 1;
-    }
-
-    .project-footer {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin-top: 0.25rem;
-    }
-
-    .project-tag {
-      font-size: 0.72rem;
-      font-family: var(--mono);
-      background: rgba(91, 141, 238, 0.08);
-      border: 1px solid rgba(91, 141, 238, 0.2);
-      color: var(--accent);
-      border-radius: 4px;
-      padding: 0.15rem 0.45rem;
-    }
-
-    /* ── PUBLICATIONS ── */
-    .pub-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .pub-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-    }
-
-    .pub-year {
-      font-size: 0.72rem;
-      font-family: var(--mono);
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.4rem;
-    }
-
-    .pub-title {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-      line-height: 1.4;
-    }
-
-    .pub-authors {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 0.35rem;
-    }
-
-    .pub-authors strong {
-      color: var(--text);
-    }
-
-    .pub-venue {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      font-style: italic;
-      margin-bottom: 0.75rem;
-    }
-
-    .pub-bibtex {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 0.85rem 1rem;
-      font-family: var(--mono);
-      font-size: 0.73rem;
-      color: var(--text-muted);
-      white-space: pre-wrap;
-      word-break: break-word;
-      display: none;
-    }
-
+    .section { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; border-top: 1px solid var(--border); }
+    .section-label { font-size: 0.75rem; font-family: var(--mono); color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+    .section-title { font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem; letter-spacing: -0.01em; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .about-text p { color: var(--text-muted); margin-bottom: 1rem; }
+    .about-meta dt { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-top: 1rem; }
+    .about-meta dd { font-size: 0.95rem; color: var(--text); }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+    .skill-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.4rem; }
+    .skill-card h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.75rem; font-family: var(--mono); }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag { font-size: 0.78rem; font-family: var(--mono); background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 0.2rem 0.5rem; color: var(--text-muted); }
+    .projects-toolbar { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-bottom: 1.5rem; }
+    .search-box { flex: 1; min-width: 200px; background: var(--surface); border: 1px solid var(--border); border-radius: 7px; padding: 0.5rem 0.9rem; font-size: 0.875rem; color: var(--text); font-family: inherit; outline: none; transition: border-color 0.15s; }
+    .search-box:focus { border-color: var(--accent); }
+    .search-box::placeholder { color: var(--text-muted); }
+    .filter-group { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .filter-btn { font-size: 0.78rem; font-family: var(--mono); padding: 0.35rem 0.75rem; border-radius: 5px; border: 1px solid var(--border); background: transparent; color: var(--text-muted); cursor: pointer; transition: all 0.15s; }
+    .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .filter-btn.active { background: rgba(91,141,238,0.15); border-color: var(--accent); color: var(--accent); font-weight: 600; }
+    .no-results { color: var(--text-muted); font-size: 0.9rem; padding: 2rem 0; display: none; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 1.25rem; }
+    .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; transition: border-color 0.15s, transform 0.15s; }
+    .project-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .project-card.hidden { display: none !important; }
+    .project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+    .project-name { font-size: 1.05rem; font-weight: 700; }
+    .project-badges { display: flex; gap: 0.4rem; flex-shrink: 0; flex-wrap: wrap; justify-content: flex-end; }
+    .badge { font-size: 0.68rem; font-family: var(--mono); padding: 0.15rem 0.5rem; border-radius: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+    .badge-personal { background: rgba(62,207,142,0.12); color: var(--green); border: 1px solid rgba(62,207,142,0.3); }
+    .badge-research { background: rgba(91,141,238,0.12); color: var(--accent); border: 1px solid rgba(91,141,238,0.3); }
+    .badge-coursework { background: rgba(245,158,11,0.12); color: var(--amber); border: 1px solid rgba(245,158,11,0.3); }
+    .badge-volunteer { background: rgba(124,92,191,0.12); color: #a78bfa; border: 1px solid rgba(124,92,191,0.3); }
+    .project-desc { font-size: 0.9rem; color: var(--text-muted); flex: 1; }
+    .project-links-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.25rem; }
+    .link-chip { font-size: 0.75rem; padding: 0.25rem 0.6rem; border: 1px solid var(--border); border-radius: 5px; color: var(--text-muted); transition: all 0.15s; display: inline-flex; align-items: center; gap: 0.3rem; }
+    .link-chip:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+    .link-chip.pdf { border-color: rgba(245,158,11,0.3); color: var(--amber); }
+    .link-chip.pdf:hover { border-color: var(--amber); background: rgba(245,158,11,0.08); }
+    .link-chip.live { border-color: rgba(62,207,142,0.3); color: var(--green); }
+    .link-chip.live:hover { border-color: var(--green); background: rgba(62,207,142,0.08); }
+    .link-chip.private { color: #555; border-color: #333; cursor: default; }
+    .link-chip.private:hover { color: #555; border-color: #333; }
+    .project-stack { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .project-tag { font-size: 0.72rem; font-family: var(--mono); background: rgba(91,141,238,0.08); border: 1px solid rgba(91,141,238,0.2); color: var(--accent); border-radius: 4px; padding: 0.15rem 0.45rem; }
+    .pub-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .pub-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+    .pub-year { font-size: 0.72rem; font-family: var(--mono); color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
+    .pub-title { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; line-height: 1.4; }
+    .pub-authors { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.35rem; }
+    .pub-authors strong { color: var(--text); }
+    .pub-venue { font-size: 0.85rem; color: var(--text-muted); font-style: italic; margin-bottom: 0.75rem; }
+    .pub-bibtex { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.85rem 1rem; font-family: var(--mono); font-size: 0.73rem; color: var(--text-muted); white-space: pre-wrap; word-break: break-word; display: none; margin-top: 0.75rem; }
     .pub-bibtex.open { display: block; }
-
-    .pub-actions {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .pub-btn {
-      font-size: 0.78rem;
-      padding: 0.3rem 0.7rem;
-      border: 1px solid var(--border);
-      border-radius: 5px;
-      color: var(--text-muted);
-      cursor: pointer;
-      background: transparent;
-      transition: all 0.15s;
-    }
-
-    .pub-btn:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    /* ── EXPERIENCE ── */
-    .exp-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .exp-card {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 1.5rem;
-    }
-
-    .exp-date {
-      font-size: 0.78rem;
-      font-family: var(--mono);
-      color: var(--text-muted);
-      padding-top: 0.15rem;
-      text-align: right;
-      line-height: 1.4;
-    }
-
-    .exp-body h3 {
-      font-size: 1rem;
-      font-weight: 700;
-    }
-
-    .exp-body .exp-org {
-      font-size: 0.88rem;
-      color: var(--accent);
-      margin-bottom: 0.4rem;
-    }
-
-    .exp-body p {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-    }
-
-    /* ── CONTACT ── */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-
-    .contact-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem;
-      text-align: center;
-      transition: border-color 0.15s;
-    }
-
+    .pub-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+    .pub-btn { font-size: 0.78rem; padding: 0.3rem 0.7rem; border: 1px solid var(--border); border-radius: 5px; color: var(--text-muted); cursor: pointer; background: transparent; transition: all 0.15s; font-family: inherit; }
+    .pub-btn:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+    .pub-btn.pdf { border-color: rgba(245,158,11,0.3); color: var(--amber); }
+    .pub-btn.pdf:hover { background: rgba(245,158,11,0.08); border-color: var(--amber); }
+    .exp-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .exp-card { display: grid; grid-template-columns: 120px 1fr; gap: 1.5rem; }
+    .exp-date { font-size: 0.78rem; font-family: var(--mono); color: var(--text-muted); padding-top: 0.15rem; text-align: right; line-height: 1.4; }
+    .exp-body h3 { font-size: 1rem; font-weight: 700; }
+    .exp-body .exp-org { font-size: 0.88rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .exp-body p { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0.4rem; }
+    .exp-body p:last-child { margin-bottom: 0; }
+    .exp-link { font-size: 0.78rem; color: var(--text-muted); border: 1px solid var(--border); border-radius: 5px; padding: 0.2rem 0.55rem; display: inline-flex; gap: 0.3rem; transition: all 0.15s; margin-top: 0.35rem; }
+    .exp-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+    .contact-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; text-align: center; transition: border-color 0.15s; }
     .contact-card:hover { border-color: var(--accent); }
-
-    .contact-card .c-label {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      margin-bottom: 0.4rem;
-    }
-
-    .contact-card a {
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 2.5rem 2rem;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      border-top: 1px solid var(--border);
-    }
-
-    /* ── RESPONSIVE ── */
+    .contact-card .c-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.4rem; }
+    .contact-card a, .contact-card span { font-size: 0.9rem; font-weight: 600; }
+    footer { text-align: center; padding: 2.5rem 2rem; font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid var(--border); }
     @media (max-width: 640px) {
       .about-grid { grid-template-columns: 1fr; }
       .projects-grid { grid-template-columns: 1fr; }
@@ -486,8 +116,6 @@
   </style>
 </head>
 <body>
-
-<!-- ── NAV ── -->
 <nav>
   <span class="nav-brand">ajc3xc</span>
   <ul class="nav-links">
@@ -495,449 +123,272 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#publications">Publications</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
-
-<!-- ── HERO ── -->
 <header class="hero">
   <div class="hero-tag">CS Researcher · Robotics · ML</div>
   <h1>Adam <span>Camerer</span></h1>
-  <p class="hero-sub">
-    Graduate researcher at Missouri S&amp;T building AI tools for structural health monitoring,
-    autonomous robotics, and geospatial deep learning. Co-founder of REDACTED.
-  </p>
+  <p class="hero-sub">Graduate researcher at Missouri S&amp;T building AI tools for structural health monitoring, autonomous robotics, and geospatial deep learning. Co-founder of REDACTED.</p>
   <div class="hero-links">
     <a href="mailto:ajc123private@gmail.com" class="btn btn-primary">Email Me</a>
     <a href="https://github.com/ajc3xc" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
     <a href="https://linkedin.com/in/adam-camerer" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://scholar.google.com/citations?user=adam-camerer" class="btn btn-outline" target="_blank" rel="noopener">Scholar</a>
+    <a href="https://usemeridian.us" class="btn btn-outline" target="_blank" rel="noopener">Meridian ↗</a>
   </div>
 </header>
-
-<!-- ── ABOUT ── -->
 <section class="section" id="about">
   <div class="section-label">// about</div>
   <h2 class="section-title">Who I Am</h2>
   <div class="about-grid">
     <div class="about-text">
-      <p>
-        I'm a Computer Science M.S. student at Missouri University of Science and Technology (Missouri S&amp;T),
-        where my research focuses on AI-driven frameworks for crack width measurement in structural health
-        monitoring imagery. My thesis develops annotation pipelines, segmentation models, and width estimation
-        algorithms to automate structural inspection.
-      </p>
-      <p>
-        Previously, I interned at the USGS National Geospatial Technical Operations Center, co-authoring
-        peer-reviewed work on deep learning transfer for hydrographic feature extraction and cartographic
-        generalization. I also spent a semester as a UF Pathfinder Fellow working on 3D reconstruction and
-        autonomous navigation for greenhouse robotics at the University of Florida.
-      </p>
-      <p>
-        Outside of research I co-founded REDACTED, an agricultural robotics startup building autonomous
-        pollination systems for controlled-environment agriculture.
-      </p>
+      <p>I'm a Computer Science M.S. student at Missouri University of Science and Technology, where my research focuses on AI-driven frameworks for crack width measurement in structural health monitoring imagery. My thesis develops annotation pipelines, segmentation models, and width estimation algorithms to automate structural inspection.</p>
+      <p>Previously a USGS student contractor co-authoring peer-reviewed work on deep learning for hydrographic feature extraction, and a UF Pathfinder Fellow working on 3D reconstruction and autonomous navigation for greenhouse robotics.</p>
+      <p>Outside of research I co-founded REDACTED, an agricultural sensing startup building multi-sensor handheld platforms for tropical crop disease detection. I also built and ship Meridian, a production MCP coordination server for parallel AI coding sessions.</p>
     </div>
     <dl class="about-meta">
-      <dt>Status</dt>
-      <dd>M.S. CS — Missouri S&amp;T (Expected 2026)</dd>
-      <dt>Location</dt>
-      <dd>Gainesville, FL 32608</dd>
-      <dt>B.S.</dt>
-      <dd>Computer Science, Minor Mathematics<br>Missouri S&amp;T — Summa Cum Laude, 3.817 GPA (May 2025)</dd>
-      <dt>Research Areas</dt>
-      <dd>Computer Vision, Structural Health Monitoring, Geospatial ML, Robotics</dd>
-      <dt>Email</dt>
-      <dd><a href="mailto:ajc123private@gmail.com">ajc123private@gmail.com</a></dd>
+      <dt>Status</dt><dd>M.S. CS — Missouri S&amp;T (Expected 2026)</dd>
+      <dt>Location</dt><dd>Gainesville, FL 32608</dd>
+      <dt>B.S.</dt><dd>Computer Science, Minor Mathematics<br>Missouri S&amp;T — Summa Cum Laude, 3.817 GPA (May 2025)</dd>
+      <dt>Research Areas</dt><dd>Computer Vision · Geospatial ML · Sensor Fusion · Robotics</dd>
+      <dt>Email</dt><dd><a href="mailto:ajc123private@gmail.com">ajc123private@gmail.com</a></dd>
     </dl>
   </div>
 </section>
-
-<!-- ── SKILLS ── -->
 <section class="section" id="skills">
   <div class="section-label">// skills</div>
   <h2 class="section-title">Technical Skills</h2>
   <div class="skills-grid">
-
-    <div class="skill-card">
-      <h3>Languages</h3>
-      <div class="skill-tags">
-        <span class="tag">Python</span><span class="tag">C/C++</span><span class="tag">Rust</span>
-        <span class="tag">JavaScript</span><span class="tag">R</span><span class="tag">Bash</span>
-        <span class="tag">Shell</span><span class="tag">Assembly</span><span class="tag">Godot</span>
-      </div>
-    </div>
-
-    <div class="skill-card">
-      <h3>ML / AI</h3>
-      <div class="skill-tags">
-        <span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">PaddleSeg</span>
-        <span class="tag">YOLO</span><span class="tag">Detectron2</span><span class="tag">sklearn</span>
-        <span class="tag">DNABERT2</span><span class="tag">Roboflow</span>
-      </div>
-    </div>
-
-    <div class="skill-card">
-      <h3>Computer Vision</h3>
-      <div class="skill-tags">
-        <span class="tag">OpenCV</span><span class="tag">PlantCV</span><span class="tag">Open3D</span>
-        <span class="tag">Cupoch</span><span class="tag">Azure Kinect</span><span class="tag">CUDA</span>
-      </div>
-    </div>
-
-    <div class="skill-card">
-      <h3>HPC / Cloud</h3>
-      <div class="skill-tags">
-        <span class="tag">SLURM</span><span class="tag">LSF</span><span class="tag">AWS S3/EC2/Lambda</span>
-        <span class="tag">Azure</span><span class="tag">Dask</span><span class="tag">Numba</span>
-        <span class="tag">Pandarallel</span>
-      </div>
-    </div>
-
-    <div class="skill-card">
-      <h3>Geospatial</h3>
-      <div class="skill-tags">
-        <span class="tag">GDAL</span><span class="tag">Rasterio</span><span class="tag">Geopandas</span>
-        <span class="tag">Shapely</span><span class="tag">OSMnx</span><span class="tag">QGIS</span>
-        <span class="tag">ArcGIS</span><span class="tag">Leaflet.js</span>
-      </div>
-    </div>
-
-    <div class="skill-card">
-      <h3>Robotics</h3>
-      <div class="skill-tags">
-        <span class="tag">ROS2</span><span class="tag">Nav2</span><span class="tag">Gazebo</span>
-        <span class="tag">Arduino</span><span class="tag">Raspberry Pi</span><span class="tag">ESP32</span>
-      </div>
-    </div>
-
-    <div class="skill-card">
-      <h3>Data &amp; Web</h3>
-      <div class="skill-tags">
-        <span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span>
-        <span class="tag">Plotly</span><span class="tag">FastAPI</span><span class="tag">Flask</span>
-        <span class="tag">React</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span>
-      </div>
-    </div>
-
-    <div class="skill-card">
-      <h3>Bioinformatics</h3>
-      <div class="skill-tags">
-        <span class="tag">STAR</span><span class="tag">CircExplorer</span><span class="tag">Seqtk</span>
-        <span class="tag">Trimmomatic</span><span class="tag">WGS</span><span class="tag">BAM files</span>
-      </div>
-    </div>
-
-    <div class="skill-card">
-      <h3>Instrumentation &amp; Tools</h3>
-      <div class="skill-tags">
-        <span class="tag">LabVIEW</span><span class="tag">Oscilloscope</span><span class="tag">MQTT</span>
-        <span class="tag">XBee</span><span class="tag">Git</span><span class="tag">VIDA/DICE</span>
-      </div>
-    </div>
-
+    <div class="skill-card"><h3>Languages</h3><div class="skill-tags"><span class="tag">Python</span><span class="tag">C/C++</span><span class="tag">Rust</span><span class="tag">JavaScript</span><span class="tag">R</span><span class="tag">Bash</span><span class="tag">MATLAB</span><span class="tag">Assembly</span></div></div>
+    <div class="skill-card"><h3>ML / AI</h3><div class="skill-tags"><span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">PaddleSeg</span><span class="tag">YOLO</span><span class="tag">SAM3</span><span class="tag">DNABERT2</span><span class="tag">sklearn</span></div></div>
+    <div class="skill-card"><h3>Computer Vision</h3><div class="skill-tags"><span class="tag">OpenCV</span><span class="tag">PlantCV</span><span class="tag">Open3D</span><span class="tag">Cupoch</span><span class="tag">Azure Kinect</span><span class="tag">CUDA</span></div></div>
+    <div class="skill-card"><h3>Embedded / IoT</h3><div class="skill-tags"><span class="tag">Raspberry Pi</span><span class="tag">Arduino</span><span class="tag">ESP32</span><span class="tag">XBee</span><span class="tag">MQTT</span><span class="tag">Node-RED</span><span class="tag">AWS IoT</span></div></div>
+    <div class="skill-card"><h3>HPC / Cloud</h3><div class="skill-tags"><span class="tag">SLURM</span><span class="tag">AWS S3/EC2</span><span class="tag">Azure</span><span class="tag">Dask</span><span class="tag">Numba</span><span class="tag">RunPod</span><span class="tag">Fly.io</span></div></div>
+    <div class="skill-card"><h3>Full Stack</h3><div class="skill-tags"><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">WebSockets</span><span class="tag">Stripe</span><span class="tag">OAuth</span></div></div>
+    <div class="skill-card"><h3>Robotics</h3><div class="skill-tags"><span class="tag">ROS2</span><span class="tag">Nav2</span><span class="tag">Gazebo</span><span class="tag">Isaac Sim</span><span class="tag">Unreal 5</span><span class="tag">FreeCAD</span></div></div>
+    <div class="skill-card"><h3>Geospatial</h3><div class="skill-tags"><span class="tag">GDAL</span><span class="tag">Rasterio</span><span class="tag">Geopandas</span><span class="tag">arcpy</span><span class="tag">QGIS</span><span class="tag">Shapely</span></div></div>
+    <div class="skill-card"><h3>Instrumentation</h3><div class="skill-tags"><span class="tag">LabVIEW</span><span class="tag">Oscilloscope</span><span class="tag">DHT11</span><span class="tag">SGP30</span><span class="tag">ThingSpeak</span><span class="tag">Grafana</span></div></div>
   </div>
 </section>
-
-<!-- ── PROJECTS ── -->
 <section class="section" id="projects">
   <div class="section-label">// projects</div>
   <h2 class="section-title">Featured Projects</h2>
-  <div class="projects-grid">
-
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-name">Meridian</div>
-        <div class="project-links">
-          <a href="https://github.com/ajc3xc" class="icon-link" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-      <p class="project-desc">
-        AI-powered sprint management and code collaboration platform for software engineering teams.
-        Integrates with Claude to enable autonomous agent-driven development workflows, structured
-        sprint execution, and semantic code graph analysis.
-      </p>
-      <div class="project-footer">
-        <span class="project-tag">Python</span>
-        <span class="project-tag">Claude API</span>
-        <span class="project-tag">FastAPI</span>
-        <span class="project-tag">PostgreSQL</span>
-        <span class="project-tag">Docker</span>
-      </div>
+  <div class="projects-toolbar">
+    <input class="search-box" type="text" id="search" placeholder="Search projects..." oninput="filterProjects()">
+    <div class="filter-group">
+      <button class="filter-btn active" data-cat="all" onclick="setFilter(this)">All</button>
+      <button class="filter-btn" data-cat="personal" onclick="setFilter(this)">Personal</button>
+      <button class="filter-btn" data-cat="research" onclick="setFilter(this)">Research</button>
+      <button class="filter-btn" data-cat="coursework" onclick="setFilter(this)">Coursework</button>
+      <button class="filter-btn" data-cat="volunteer" onclick="setFilter(this)">Volunteer</button>
     </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-name">Crack Width Assessment Tool</div>
-        <div class="project-links">
-          <a href="https://github.com/ajc3xc/crack-width-tool" class="icon-link" target="_blank" rel="noopener">GitHub</a>
-        </div>
+  </div>
+  <div class="no-results" id="no-results">No projects match your search.</div>
+  <div class="projects-grid" id="projects-grid">
+    <div class="project-card" data-cat="personal" data-search="meridian mcp fastapi postgresql docker stripe oauth websockets python saas ai coordination">
+      <div class="project-header"><div class="project-name">Meridian</div><div class="project-badges"><span class="badge badge-personal">Personal</span></div></div>
+      <p class="project-desc">Production MCP server for coordinating parallel AI coding sessions. Multi-tenant SaaS with per-tenant Neon DB isolation, AES-256 encryption, OAuth + magic link auth, Stripe billing, 535+ tests, CI/CD, and PyInstaller cross-platform binaries. 54+ coordination tools. Built and dogfooded using its own sprint-tracking infrastructure.</p>
+      <div class="project-links-row">
+        <a href="https://github.com/MeridianMCP/Meridian" class="link-chip" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://usemeridian.us" class="link-chip live" target="_blank" rel="noopener">Live</a>
+        <a href="https://docs.usemeridian.us" class="link-chip" target="_blank" rel="noopener">Docs</a>
       </div>
-      <p class="project-desc">
-        M.S. thesis research: a framework for annotation, measurement, and evaluation of crack widths
-        in structural health monitoring (SHM) imagery. Combines semantic segmentation (PaddleSeg, YOLO)
-        with geometry-based width estimation to automate structural inspection at scale.
-      </p>
-      <div class="project-footer">
-        <span class="project-tag">Python</span>
-        <span class="project-tag">PaddleSeg</span>
-        <span class="project-tag">YOLO</span>
-        <span class="project-tag">OpenCV</span>
-        <span class="project-tag">Computer Vision</span>
-      </div>
+      <div class="project-stack"><span class="project-tag">Python</span><span class="project-tag">FastAPI</span><span class="project-tag">PostgreSQL</span><span class="project-tag">MCP</span><span class="project-tag">Stripe</span><span class="project-tag">Docker</span></div>
     </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-name">REDACTED</div>
-        <div class="project-links">
-          <a href="https://github.com/ajc3xc/REDACTED" class="icon-link" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-      <p class="project-desc">
-        Co-founded agricultural robotics startup developing autonomous indoor pollination systems for
-        controlled-environment agriculture. Led technical development as CTO — robot navigation,
-        flower detection, pollination actuation — and fundraising efforts.
-      </p>
-      <div class="project-footer">
-        <span class="project-tag">ROS2</span>
-        <span class="project-tag">Nav2</span>
-        <span class="project-tag">Computer Vision</span>
-        <span class="project-tag">Python</span>
-        <span class="project-tag">Startup</span>
-      </div>
+    <div class="project-card" data-cat="personal" data-search="REDACTED REDACTED sensor fusion spectral thermal crop disease detection nsf icorps agricultural startup">
+      <div class="project-header"><div class="project-name">REDACTED / REDACTED</div><div class="project-badges"><span class="badge badge-personal">Startup</span></div></div>
+      <p class="project-desc">Handheld multi-sensor crop disease detection platform for tropical smallholders. AS7265x 18-channel spectral + MLX90640 thermal array + BME688 environmental sensor fusion. Closed-loop LED AGC, edge vs cloud inference decision. REDACTED validated. 1st place NW MO State New Venture Pitch Competition 2025.</p>
+      <div class="project-links-row"><span class="link-chip private">Repo private · contact for details</span></div>
+      <div class="project-stack"><span class="project-tag">Raspberry Pi</span><span class="project-tag">ESP32</span><span class="project-tag">Python</span><span class="project-tag">TFLite</span><span class="project-tag">YOLO</span><span class="project-tag">OpenCV</span></div>
     </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-name">MARSfarm Plant Phenotyping</div>
-        <div class="project-links">
-          <a href="https://github.com/ajc3xc/marsfarm-phenotyping" class="icon-link" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-      <p class="project-desc">
-        Capstone project for agricultural startup MARSfarm: automated plant phenotyping pipeline
-        using PlantCV and computer vision to track growth metrics — leaf area, color indices,
-        canopy size — across time-series imagery from controlled grow chambers.
-      </p>
-      <div class="project-footer">
-        <span class="project-tag">Python</span>
-        <span class="project-tag">PlantCV</span>
-        <span class="project-tag">OpenCV</span>
-        <span class="project-tag">Image Analysis</span>
-      </div>
+    <div class="project-card" data-cat="research" data-search="crack segmentation width measurement thesis structural health monitoring pyqt5 sam3 opencv pytorch centerline">
+      <div class="project-header"><div class="project-name">Crack Width Segmentation Tool</div><div class="project-badges"><span class="badge badge-research">Research · Thesis</span></div></div>
+      <p class="project-desc">M.S. thesis. PyQt5 annotator and evaluation pipeline for crack midline extraction and sub-pixel width estimation. Multi-cue approach (segmentation + depth + intensity + RGB) recovers true geometric width perpendicular to the crack centerline — beating binary mask baselines. Benchmarked against SOTA on SUT-Crack dataset.</p>
+      <div class="project-links-row"><a href="https://github.com/ajc3xc/crack-segmentation-tool" class="link-chip" target="_blank" rel="noopener">GitHub</a></div>
+      <div class="project-stack"><span class="project-tag">Python</span><span class="project-tag">PyQt5</span><span class="project-tag">SAM3</span><span class="project-tag">OpenCV</span><span class="project-tag">PyTorch</span><span class="project-tag">pixi</span></div>
     </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-name">Embedded Climate Controller (PID vs. Fuzzy-PID)</div>
-        <div class="project-links">
-          <a href="https://github.com/ajc3xc/control_systems_final_project" class="icon-link" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-      <p class="project-desc">
-        Built a closed-loop environmental chamber on a Raspberry Pi 4 (ABE5009 — Control Systems in SmartAg).
-        Implemented both standard PID and a fuzzy gain-scheduled PID to control a MOSFET-switched heating
-        pad and fan inside a foam cooler. Modeled the thermal plant in Simulink and compared controllers
-        experimentally: fuzzy-PID achieved 3.6× faster rise time (51 s vs 187 s) but PID achieved tighter
-        steady-state regulation (±0.17 °C error vs −0.47 °C).
-      </p>
-      <div class="project-footer">
-        <span class="project-tag">Raspberry Pi</span>
-        <span class="project-tag">PID / Fuzzy-PID</span>
-        <span class="project-tag">Python</span>
-        <span class="project-tag">Simulink</span>
-        <span class="project-tag">DHT11</span>
-        <span class="project-tag">Embedded Control</span>
-      </div>
+    <div class="project-card" data-cat="research" data-search="blueberry detection flower phenological staging computer vision yolo agricultural REDACTED">
+      <div class="project-header"><div class="project-name">Blueberry Flower Detection</div><div class="project-badges"><span class="badge badge-research">Research</span></div></div>
+      <p class="project-desc">Detects blueberry flowers in field imagery and classifies their phenological development stage. Agricultural CV project adjacent to REDACTED/REDACTED work on crop monitoring. Supports precision horticulture timing and yield prediction workflows.</p>
+      <div class="project-links-row"><a href="https://github.com/ajc3xc/blueberry_detection" class="link-chip" target="_blank" rel="noopener">GitHub</a></div>
+      <div class="project-stack"><span class="project-tag">Python</span><span class="project-tag">YOLO</span><span class="project-tag">OpenCV</span><span class="project-tag">Computer Vision</span></div>
     </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-name">XBee Wireless Sensor Network</div>
-        <div class="project-links">
-          <a href="https://github.com/ajc3xc/xbee-sensor-network" class="icon-link" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-      <p class="project-desc">
-        Designed and deployed a multi-node wireless sensor network (ABE6031) using XBee radios,
-        an Arduino Uno (Node 1: DHT11 + SGP30 eCO₂/TVOC + photoresistor), and an Elegoo MEGA 2560
-        (Node 2: DHT11 + photoresistor). A Raspberry Pi 4 gateway serialized all sensor CSVs, uploaded
-        8-channel telemetry to ThingSpeak every 20 s, and pushed Pi Camera images to Google Drive
-        via rclone every 60 s.
-      </p>
-      <div class="project-footer">
-        <span class="project-tag">XBee</span>
-        <span class="project-tag">Arduino</span>
-        <span class="project-tag">Raspberry Pi</span>
-        <span class="project-tag">SGP30 eCO₂/TVOC</span>
-        <span class="project-tag">ThingSpeak</span>
-        <span class="project-tag">Python</span>
-        <span class="project-tag">IoT</span>
-      </div>
+    <div class="project-card" data-cat="research" data-search="sam3 video segmentation annotator gui yolo bamboo robotics perception pyqt5">
+      <div class="project-header"><div class="project-name">SAM3.1 Video Segmentation Annotator</div><div class="project-badges"><span class="badge badge-research">Research</span></div></div>
+      <p class="project-desc">Team lead. Built a PyQt5 GUI tool for semi-automatic video annotation using SAM3.1 — generates, modifies, and propagates first-frame segmentation masks through video for YOLO training data generation. Used for bamboo culm segmentation in a robotics perception project at UF.</p>
+      <div class="project-links-row"><a href="https://github.com/ajc3xc/advanced_perception_stuff" class="link-chip" target="_blank" rel="noopener">GitHub</a></div>
+      <div class="project-stack"><span class="project-tag">Python</span><span class="project-tag">SAM3</span><span class="project-tag">PyQt5</span><span class="project-tag">YOLO</span><span class="project-tag">OpenCV</span></div>
     </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-name">LabVIEW Signal Processing Pipeline</div>
-        <div class="project-links">
-        </div>
-      </div>
-      <p class="project-desc">
-        Developed a five-stage sensor signal processing pipeline in LabVIEW (ABE6031 Take-Home Final).
-        Stages: (1) Z-score outlier removal (σ = 2 threshold, replaced with prior value), (2) IIR
-        Butterworth lowpass filter at 400 Hz cutoff, (3) FFT spectral analysis with Hanning window and
-        Peak Magnitude measurement, (4) Fourier series reconstruction at 4 dominant frequencies
-        (~100, 200, 300, 401 Hz), and (5) RMS error = 4.84 between filtered and reconstructed signals.
-      </p>
-      <div class="project-footer">
-        <span class="project-tag">LabVIEW</span>
-        <span class="project-tag">Signal Processing</span>
-        <span class="project-tag">FFT / Fourier</span>
-        <span class="project-tag">Butterworth Filter</span>
-        <span class="project-tag">Instrumentation</span>
-      </div>
+    <div class="project-card" data-cat="research" data-search="greenhouse robotics 3d reconstruction ros2 azure kinect open3d slam pathfinder uf vanilla">
+      <div class="project-header"><div class="project-name">Greenhouse 3D Reconstruction (UF Pathfinder)</div><div class="project-badges"><span class="badge badge-research">Research</span></div></div>
+      <p class="project-desc">Pathfinder Fellow project at University of Florida. Compared monocular AI reconstruction (VGGT, Pi3) to traditional SLAM/TSDF (Cupoch/Open3D, NVBlox, GPS SLAM) on Azure Kinect RGB-D data in a vanilla greenhouse. Also prototyped FreeCAD pollination end effector and Isaac Sim airflow simulation.</p>
+      <div class="project-links-row"><a href="https://github.com/ajc3xc/Greenhouse_Mapping" class="link-chip" target="_blank" rel="noopener">GitHub</a></div>
+      <div class="project-stack"><span class="project-tag">ROS2</span><span class="project-tag">Open3D</span><span class="project-tag">Azure Kinect</span><span class="project-tag">Isaac Sim</span><span class="project-tag">Unreal 5</span><span class="project-tag">FreeCAD</span></div>
     </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-name">Greenhouse Robotics (UF Pathfinder)</div>
-        <div class="project-links">
-          <a href="https://github.com/ajc3xc" class="icon-link" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-      <p class="project-desc">
-        As a UF Pathfinder Fellow, developed autonomous navigation and 3D reconstruction pipelines
-        for agricultural robots operating inside greenhouse environments. Used Azure Kinect depth
-        cameras, Open3D/Cupoch point cloud processing, ROS2, and Nav2 for simultaneous localization and mapping.
-      </p>
-      <div class="project-footer">
-        <span class="project-tag">ROS2</span>
-        <span class="project-tag">Nav2</span>
-        <span class="project-tag">Azure Kinect</span>
-        <span class="project-tag">Open3D</span>
-        <span class="project-tag">SLAM</span>
-      </div>
+    <div class="project-card" data-cat="research" data-search="usgs hydrography deep learning arcpy geopandas alaska ifsar transfer learning geospatial cnn">
+      <div class="project-header"><div class="project-name">USGS Hydrography Deep Learning Pipeline</div><div class="project-badges"><span class="badge badge-research">Research · USGS</span></div></div>
+      <p class="project-desc">2-year student contractor role. Built arcpy/geopandas workflows for the National Map, automated 10TB AK HUC12 data processing for CNN inputs, D-infinity augmentation for connectivity improvement, S3 sinuosity metric animations with audified piano score. 6 co-authored publications.</p>
+      <div class="project-links-row"><a href="https://pubs.usgs.gov/publication/70250212" class="link-chip" target="_blank" rel="noopener">USGS Pub</a></div>
+      <div class="project-stack"><span class="project-tag">Python</span><span class="project-tag">arcpy</span><span class="project-tag">Geopandas</span><span class="project-tag">GDAL</span><span class="project-tag">AWS S3</span><span class="project-tag">TensorFlow</span></div>
     </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-name">DNABERT-2 Fine-tuning for DNA Error Correction</div>
-        <div class="project-links">
-          <a href="https://github.com/ajc3xc/dnabert2-error-correction" class="icon-link" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-      <p class="project-desc">
-        Co-authored graduate ML project (CS6001 — Missouri S&T, w/ Luke Hendrickson) fine-tuning
-        DNABERT-2 for per-base DNA sequencing error detection. Synthesized 3.2 M 150 bp reads from
-        chr21 T2T reference with 10 % indel + 1 % substitution noise. Replaced softmax with
-        sigmoid multi-label output (dim = 150), applied LoRA, and fixed a Triton Flash Attention
-        matrix-transpose bug. Trained on NVIDIA A100 80 GB. F1: 0.651 → 0.995; Recall: 0.486 → 1.0.
-      </p>
-      <div class="project-footer">
-        <span class="project-tag">PyTorch</span>
-        <span class="project-tag">DNABERT-2</span>
-        <span class="project-tag">LoRA</span>
-        <span class="project-tag">Flash Attention</span>
-        <span class="project-tag">CUDA / A100</span>
-        <span class="project-tag">Bioinformatics</span>
-      </div>
+    <div class="project-card" data-cat="research" data-search="wustl washington university oncology circrna cancer detection rna sequencing bioinformatics edger">
+      <div class="project-header"><div class="project-name">WashU Oncology — circRNA Cancer Detection</div><div class="project-badges"><span class="badge badge-research">Research · Internship</span></div></div>
+      <p class="project-desc">Summer internship at Washington University School of Medicine. Analyzed a pilot study of novel cancer detection via circRNA in urine across 110 renal cancer, bladder cancer, and healthy samples. Discovered significant differential gene expression. Built pipelines using CircExplorer, STAR, featureCounts, edgeR, and EDA between linear and circular RNA.</p>
+      <div class="project-links-row"><a href="https://github.com/ajc3xc/wustl_research" class="link-chip" target="_blank" rel="noopener">GitHub</a></div>
+      <div class="project-stack"><span class="project-tag">Python</span><span class="project-tag">CircExplorer</span><span class="project-tag">STAR</span><span class="project-tag">edgeR</span><span class="project-tag">R</span><span class="project-tag">Bioinformatics</span></div>
     </div>
-
+    <div class="project-card" data-cat="coursework" data-search="marsfarm plant phenotyping opencv plantcv aws ec2 s3 capstone image processing agriculture">
+      <div class="project-header"><div class="project-name">MARSfarm Plant Phenotyping</div><div class="project-badges"><span class="badge badge-coursework">Capstone</span></div></div>
+      <p class="project-desc">Capstone project for startup MARSfarm. Team of 3. Improved plant masking with custom OpenCV algorithms vs PlantCV baseline. Pioneered a PlantCV feature for automatic ROI label generation (merged to main). Deployed scalable pixel count algorithm on EC2 for 230k images on S3.</p>
+      <div class="project-links-row">
+        <a href="https://github.com/ajc3xc/marsfarm-imageprocessing" class="link-chip" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/MST-Capstone2-MarsFarm" class="link-chip" target="_blank" rel="noopener">Org</a>
+      </div>
+      <div class="project-stack"><span class="project-tag">Python</span><span class="project-tag">OpenCV</span><span class="project-tag">PlantCV</span><span class="project-tag">AWS EC2</span><span class="project-tag">AWS S3</span></div>
+    </div>
+    <div class="project-card" data-cat="coursework" data-search="pid fuzzy pid environmental controller raspberry pi dht11 mosfet heater fan simulink matlab control systems abe5009">
+      <div class="project-header"><div class="project-name">Raspberry Pi PID Environmental Controller</div><div class="project-badges"><span class="badge badge-coursework">Coursework · ABE5009</span></div></div>
+      <p class="project-desc">Closed-loop temperature and humidity controller on Raspberry Pi (ABE5009 — Control Systems in SmartAg). DHT11 sensor + MOSFET-switched heater and fan. Implemented PID vs Fuzzy-PID: PID achieved 0.17°C steady-state error; Fuzzy-PID achieved 3.6× faster rise time (51s vs 187s). Simulink plant model + real-time matplotlib dashboard.</p>
+      <div class="project-links-row">
+        <a href="https://github.com/ajc3xc/ABE5009_Controls" class="link-chip" target="_blank" rel="noopener">GitHub</a>
+        <a href="ABE5009/abe_5009_controls_final_project.pdf" class="link-chip pdf" target="_blank" rel="noopener">Report PDF</a>
+      </div>
+      <div class="project-stack"><span class="project-tag">Raspberry Pi</span><span class="project-tag">Python</span><span class="project-tag">PID</span><span class="project-tag">Simulink</span><span class="project-tag">matplotlib</span><span class="project-tag">DHT11</span></div>
+    </div>
+    <div class="project-card" data-cat="coursework" data-search="xbee wireless sensor network arduino raspberry pi thingspeak sgp30 co2 tvoc temperature humidity abe6031 iot">
+      <div class="project-header"><div class="project-name">XBee Wireless Sensor Network</div><div class="project-badges"><span class="badge badge-coursework">Coursework · ABE6031</span></div></div>
+      <p class="project-desc">3-node XBee wireless sensor network (ABE6031). Arduino Uno (DHT11 + SGP30 eCO₂/TVOC + photoresistor) + Elegoo MEGA 2560 (DHT11 + photoresistor). Raspberry Pi 4 coordinator parses serial data from all nodes, logs to CSV, uploads 8-channel telemetry to ThingSpeak every 20s, captures Pi Camera images to Google Drive via rclone every 60s.</p>
+      <div class="project-links-row">
+        <a href="https://github.com/ajc3xc/ABE-6031-Projects" class="link-chip" target="_blank" rel="noopener">GitHub</a>
+        <a href="ABE6031/ABE6031%20Final%20Report.pdf" class="link-chip pdf" target="_blank" rel="noopener">Report PDF</a>
+      </div>
+      <div class="project-stack"><span class="project-tag">XBee</span><span class="project-tag">Arduino</span><span class="project-tag">Raspberry Pi</span><span class="project-tag">SGP30</span><span class="project-tag">ThingSpeak</span><span class="project-tag">Python</span></div>
+    </div>
+    <div class="project-card" data-cat="coursework" data-search="labview signal processing fft butterworth filter fourier reconstruction rms abe6031 instrumentation">
+      <div class="project-header"><div class="project-name">LabVIEW Signal Processing Pipeline</div><div class="project-badges"><span class="badge badge-coursework">Coursework · ABE6031</span></div></div>
+      <p class="project-desc">Five-stage sensor signal processing pipeline in LabVIEW (ABE6031 Take-Home Final): (1) Z-score outlier removal (σ=2), (2) IIR Butterworth lowpass at 400Hz, (3) FFT with Hanning window + peak magnitude measurement, (4) Fourier series reconstruction at 4 dominant frequencies (~100, 200, 300, 401Hz), (5) RMS error = 4.84 between filtered and reconstructed signals.</p>
+      <div class="project-links-row">
+        <a href="ABE6031/ABE%206031%20Take%20Home%20Final%20Exam.pdf" class="link-chip pdf" target="_blank" rel="noopener">Report PDF</a>
+      </div>
+      <div class="project-stack"><span class="project-tag">LabVIEW</span><span class="project-tag">Signal Processing</span><span class="project-tag">FFT</span><span class="project-tag">Butterworth</span><span class="project-tag">Fourier</span></div>
+    </div>
+    <div class="project-card" data-cat="coursework" data-search="dnabert2 dna error detection lora flash attention a100 bioinformatics cs6001 fine tuning pytorch">
+      <div class="project-header"><div class="project-name">DNABERT-2 Fine-tuning for DNA Error Detection</div><div class="project-badges"><span class="badge badge-coursework">Coursework · CS6001</span></div></div>
+      <p class="project-desc">Graduate ML project (CS6001, w/ Luke Hendrickson) fine-tuning DNABERT-2 for per-base DNA sequencing error detection. 3.2M 150bp reads from chr21 T2T reference with 10% indel + 1% substitution noise. Applied LoRA, fixed Triton Flash Attention bug. Trained on A100 80GB. F1: 0.651 → 0.995; Recall: 0.486 → 1.0.</p>
+      <div class="project-links-row">
+        <a href="https://github.com/ajc3xc/CS-6001" class="link-chip" target="_blank" rel="noopener">GitHub</a>
+        <a href="6001%20-%20Final%20Report.pdf" class="link-chip pdf" target="_blank" rel="noopener">Report PDF</a>
+      </div>
+      <div class="project-stack"><span class="project-tag">PyTorch</span><span class="project-tag">DNABERT-2</span><span class="project-tag">LoRA</span><span class="project-tag">Flash Attention</span><span class="project-tag">A100</span></div>
+    </div>
+    <div class="project-card" data-cat="coursework" data-search="logic gate quiz simulator godot drag drop ece circuit capstone">
+      <div class="project-header"><div class="project-name">Logic Gate Quiz Simulator</div><div class="project-badges"><span class="badge badge-coursework">Capstone</span></div></div>
+      <p class="project-desc">Godot-based interactive logic circuit builder for ECE education. Staff can create and save customizable quiz layouts. Features 12 drag-and-drop circuit components with full connection logic.</p>
+      <div class="project-links-row"><a href="https://github.com/ajc3xc/CS-4090-Final-Project-Logic-Circuit-Quizzer-Builder" class="link-chip" target="_blank" rel="noopener">GitHub</a></div>
+      <div class="project-stack"><span class="project-tag">Godot</span><span class="project-tag">GDScript</span></div>
+    </div>
+    <div class="project-card" data-cat="volunteer" data-search="sustainable engineering vertical farm iot grafana dashboard wordpress docker esp32 greenhouse tutorial">
+      <div class="project-header"><div class="project-name">Sustainable Engineering — Vertical Farm IoT</div><div class="project-badges"><span class="badge badge-volunteer">Volunteer · EECS HoD</span></div></div>
+      <p class="project-desc">As EECS Head of Department for Missouri S&T's Sustainable Engineering Design Team, drafted the Vertical Farming Feasibility Study, developed a Docker + Grafana greenhouse dashboard on a Mini PC with ESP32 sensors, built the team's WordPress website, and ran IoT/backend tutorials for team members over multiple semesters.</p>
+      <div class="project-links-row">
+        <a href="https://github.com/MST-Sustainable-Engineering" class="link-chip" target="_blank" rel="noopener">Org GitHub</a>
+        <a href="https://github.com/ajc3xc/wordpress-website" class="link-chip" target="_blank" rel="noopener">WordPress Repo</a>
+      </div>
+      <div class="project-stack"><span class="project-tag">ESP32</span><span class="project-tag">Docker</span><span class="project-tag">Grafana</span><span class="project-tag">WordPress</span><span class="project-tag">Node-RED</span><span class="project-tag">IoT Stack</span></div>
+    </div>
   </div>
 </section>
-
-<!-- ── PUBLICATIONS ── -->
 <section class="section" id="publications">
   <div class="section-label">// publications</div>
   <h2 class="section-title">Publications</h2>
   <div class="pub-list">
-
-    <!-- pub 1 -->
-    <div class="pub-card">
-      <div class="pub-year">2026 · M.S. Thesis</div>
-      <div class="pub-title">A Framework for Annotation, Measurement and Evaluation of Crack Width in Structural Health Monitoring Imagery</div>
-      <div class="pub-authors"><strong>Camerer, A.</strong></div>
-      <div class="pub-venue">Missouri University of Science and Technology, M.S. Thesis, 2026.</div>
-      <div class="pub-actions">
-        <button class="pub-btn" onclick="toggleBibtex(this)">BibTeX</button>
-      </div>
-      <pre class="pub-bibtex">@mastersthesis{camerer2026crack,
-  author    = {Camerer, Adam},
-  title     = {A Framework for Annotation, Measurement and Evaluation of Crack Width in Structural Health Monitoring Imagery},
-  school    = {Missouri University of Science and Technology},
-  year      = {2026},
-  type      = {M.S. Thesis}
-}</pre>
-    </div>
-
-    <!-- pub 2 -->
     <div class="pub-card">
       <div class="pub-year">2025 · ICA Workshop</div>
       <div class="pub-title">Assessment of Density Pattern Retention of Generalized Data for 1:100,000-scale United States Topographic Maps</div>
-      <div class="pub-authors">
-        Stanislawski, L., Walker, B.A., Kronenfeld, B.J., Buttenfield, B.P., Shavers, E.J., Thiem, P., Wang, S., Jaroenchai, N., Jiang, Z., <strong>Camerer, A.</strong>
-      </div>
-      <div class="pub-venue">ICA Workshop on Multiscale Cartography, 2025.</div>
+      <div class="pub-authors">Stanislawski, L., Walker, B.A., Kronenfeld, B.J., Buttenfield, B.P., Shavers, E.J., <strong>Camerer, A.</strong>, Patel, Y.</div>
+      <div class="pub-venue">ICA Workshop on Multiscale Cartography and Sustainability, Vancouver, Canada, August 2025.</div>
       <div class="pub-actions">
+        <a href="abstracts/ica-abstract_2025_density_lstan_etal_v2.pdf" class="pub-btn pdf" target="_blank" rel="noopener">Abstract PDF</a>
         <button class="pub-btn" onclick="toggleBibtex(this)">BibTeX</button>
       </div>
       <pre class="pub-bibtex">@inproceedings{stanislawski2025density,
-  author    = {Stanislawski, Lawrence and Walker, B.A. and Kronenfeld, B.J. and Buttenfield, B.P. and Shavers, E.J. and Thiem, P. and Wang, S. and Jaroenchai, N. and Jiang, Z. and Camerer, Adam},
+  author    = {Stanislawski, Lawrence and Walker, B.A. and Kronenfeld, B.J. and Buttenfield, B.P. and Shavers, E.J. and Camerer, Adam and Patel, Y.},
   title     = {Assessment of Density Pattern Retention of Generalized Data for 1:100,000-scale United States Topographic Maps},
-  booktitle = {ICA Workshop on Multiscale Cartography},
+  booktitle = {ICA Workshop on Multiscale Cartography and Sustainability},
+  address   = {Vancouver, Canada},
   year      = {2025}
 }</pre>
     </div>
-
-    <!-- pub 3 -->
     <div class="pub-card">
-      <div class="pub-year">2025 · Cartes et Géomatique</div>
-      <div class="pub-title">Transfert de modèles d'apprentissage profond pour l'extraction de caractéristiques hydrographiques à partir de données IfSAR en Alaska</div>
-      <div class="pub-authors">
-        Stanislawski, L.V., Jaroenchai, N., Wang, S., Shavers, E., Duffy, A., Thiem, P., Jiang, Z., <strong>Camerer, A.</strong>
-      </div>
-      <div class="pub-venue"><em>Cartes et Géomatique</em>, 2025. [French translation of GIScience 2023]</div>
-      <div class="pub-actions">
-        <button class="pub-btn" onclick="toggleBibtex(this)">BibTeX</button>
-      </div>
-      <pre class="pub-bibtex">@article{stanislawski2025transfert,
-  author    = {Stanislawski, Lawrence V. and Jaroenchai, Nattapon and Wang, Shaowen and Shavers, Ethan and Duffy, Alex and Thiem, Peter and Jiang, Zhe and Camerer, Adam},
-  title     = {Transfert de mod{\`e}les d'apprentissage profond pour l'extraction de caract{\'e}ristiques hydrographiques {\`a} partir de donn{\'e}es {IfSAR} en {Alaska}},
-  journal   = {Cartes et G{\'e}omatique},
+      <div class="pub-year">2025 · AWRA Spring Conference</div>
+      <div class="pub-title">Mapping and Monitoring Surface Water Features in Alaska through Machine Learning</div>
+      <div class="pub-authors">Stanislawski, L.V., Shavers, E., Pastick, N., Thiem, P., Wang, S., Jaroenchai, N., <strong>Camerer, A.</strong>, Kronenfeld, B., Buttenfield, B.P.</div>
+      <div class="pub-venue">American Water Resources Association Spring Conference, Anchorage, AK, April 2025.</div>
+      <div class="pub-actions"><button class="pub-btn" onclick="toggleBibtex(this)">BibTeX</button></div>
+      <pre class="pub-bibtex">@inproceedings{stanislawski2025mapping,
+  author    = {Stanislawski, Lawrence V. and Shavers, Ethan and Pastick, Neal and Thiem, Peter and Wang, Shaowen and Jaroenchai, Nattapon and Camerer, Adam and Kronenfeld, Barry and Buttenfield, Barbara P.},
+  title     = {Mapping and Monitoring Surface Water Features in {Alaska} through Machine Learning},
+  booktitle = {AWRA Spring Conference},
+  address   = {Anchorage, AK},
   year      = {2025}
 }</pre>
     </div>
-
-    <!-- pub 4 -->
     <div class="pub-card">
       <div class="pub-year">2024 · CAGIS-UCGIS</div>
       <div class="pub-title">Adaptive Fine-tuning for Transferring a U-net Hydrography Extraction Model using K-means</div>
-      <div class="pub-authors">
-        Stanislawski, L.V., Shavers, E., Pastick, N., Thiem, P., Wang, S., Jaroenchai, N., Jiang, Z., Kronenfeld, B., Buttenfield, B.P., <strong>Camerer, A.</strong>
-      </div>
-      <div class="pub-venue">2024 Cartography and Geospatial Information Science / University Consortium for Geographic Information Science (CAGIS-UCGIS) Symposium, 2024.</div>
+      <div class="pub-authors">Stanislawski, L.V., Shavers, E., Pastick, N., Thiem, P., Wang, S., Jaroenchai, N., Jiang, Z., Kronenfeld, B., Buttenfield, B.P., <strong>Camerer, A.</strong></div>
+      <div class="pub-venue">CaGIS/UCGIS 2024 Symposium, Columbus, OH, June 2024.</div>
       <div class="pub-actions">
-        <a href="https://cagis.org/Symposium/2024/" class="pub-btn" target="_blank" rel="noopener">Venue</a>
+        <a href="abstracts/CAGIS-UCGIS-2024_paper_45.pdf" class="pub-btn pdf" target="_blank" rel="noopener">Paper PDF</a>
         <button class="pub-btn" onclick="toggleBibtex(this)">BibTeX</button>
       </div>
       <pre class="pub-bibtex">@inproceedings{stanislawski2024adaptive,
   author    = {Stanislawski, Lawrence V. and Shavers, Ethan and Pastick, Neal and Thiem, Peter and Wang, Shaowen and Jaroenchai, Nattapon and Jiang, Zhe and Kronenfeld, Barry and Buttenfield, Barbara P. and Camerer, Adam},
   title     = {Adaptive Fine-tuning for Transferring a {U-net} Hydrography Extraction Model using {K-means}},
-  booktitle = {2024 Cartography and Geospatial Information Science and University Consortium for Geographic Information Science Symposium},
+  booktitle = {CaGIS/UCGIS 2024 Symposium},
+  address   = {Columbus, OH},
   year      = {2024}
 }</pre>
     </div>
-
-    <!-- pub 5 -->
     <div class="pub-card">
-      <div class="pub-year">2023 · GIScience Workshop</div>
-      <div class="pub-title">Transferring Deep Learning Models for Hydrographic Feature Extraction from IfSAR Data in Alaska</div>
-      <div class="pub-authors">
-        Stanislawski, L.V., Jaroenchai, N., Wang, S., Shavers, E., Duffy, A., Thiem, P., Jiang, Z., <strong>Camerer, A.</strong>
+      <div class="pub-year">2024 · AWRA/UCOWR/NIWR</div>
+      <div class="pub-title">Implementation of Transfer Learning to Extract Hydrography for Alaska from IfSAR Data</div>
+      <div class="pub-authors">Stanislawski, L., Shavers, E., Pastick, N., Thiem, P., Wang, S., Jaroenchai, N., Jiang, Z., <strong>Camerer, A.</strong>, Kronenfeld, B., Buttenfield, B.P.</div>
+      <div class="pub-venue">AWRA/UCOWR/NIWR Joint Water Resources Conference, St. Louis, MO, October 2024.</div>
+      <div class="pub-actions">
+        <a href="abstracts/detailed_202324_accomplished_citations.pdf" class="pub-btn pdf" target="_blank" rel="noopener">Citations PDF</a>
+        <button class="pub-btn" onclick="toggleBibtex(this)">BibTeX</button>
       </div>
+      <pre class="pub-bibtex">@inproceedings{stanislawski2024transfer,
+  author    = {Stanislawski, Lawrence and Shavers, Ethan and Pastick, Neal and Thiem, Peter and Wang, Shaowen and Jaroenchai, Nattapon and Jiang, Zhe and Camerer, Adam and Kronenfeld, Barry and Buttenfield, Barbara P.},
+  title     = {Implementation of Transfer Learning to Extract Hydrography for {Alaska} from {IfSAR} Data},
+  booktitle = {AWRA/UCOWR/NIWR Joint Water Resources Conference},
+  address   = {St. Louis, MO},
+  year      = {2024}
+}</pre>
+    </div>
+    <div class="pub-card">
+      <div class="pub-year">2024 · AAG Annual Meeting</div>
+      <div class="pub-title">Assessment of Density Pattern Retention for Generalized Data</div>
+      <div class="pub-authors">Stanislawski, L.V., Kronenfeld, B.J., Buttenfield, B.P., Shavers, E., <strong>Camerer, A.</strong></div>
+      <div class="pub-venue">American Association of Geographers 2024 Annual Meeting, Honolulu, HI, April 2024.</div>
+      <div class="pub-actions"><button class="pub-btn" onclick="toggleBibtex(this)">BibTeX</button></div>
+      <pre class="pub-bibtex">@inproceedings{stanislawski2024assessment,
+  author    = {Stanislawski, Lawrence V. and Kronenfeld, Barry J. and Buttenfield, Barbara P. and Shavers, Ethan and Camerer, Adam},
+  title     = {Assessment of Density Pattern Retention for Generalized Data},
+  booktitle = {AAG 2024 Annual Meeting},
+  address   = {Honolulu, HI},
+  year      = {2024}
+}</pre>
+    </div>
+    <div class="pub-card">
+      <div class="pub-year">2023 · GIScience Workshop on CartoAI</div>
+      <div class="pub-title">Transferring Deep Learning Models for Hydrographic Feature Extraction from IfSAR Data in Alaska</div>
+      <div class="pub-authors">Stanislawski, L.V., Jaroenchai, N., Wang, S., Shavers, E., Duffy, A., Thiem, P., Jiang, Z., <strong>Camerer, A.</strong></div>
       <div class="pub-venue">GIScience 2023 Workshop on CartoAI: AI for Cartography, Leeds, UK, September 12, 2023.</div>
       <div class="pub-actions">
+        <a href="abstracts/10_CR_CartoAI_Stanislawski.pdf" class="pub-btn pdf" target="_blank" rel="noopener">Abstract PDF</a>
         <a href="https://pubs.usgs.gov/publication/70250212" class="pub-btn" target="_blank" rel="noopener">USGS</a>
         <button class="pub-btn" onclick="toggleBibtex(this)">BibTeX</button>
       </div>
@@ -946,114 +397,120 @@
   title     = {Transferring Deep Learning Models for Hydrographic Feature Extraction from {IfSAR} Data in {Alaska}},
   booktitle = {{GIScience} 2023 Workshop on {CartoAI}: {AI} for Cartography},
   address   = {Leeds, UK},
-  month     = sep,
   year      = {2023},
-  note      = {USGS Publication \#70250212},
   url       = {https://pubs.usgs.gov/publication/70250212}
 }</pre>
     </div>
-
   </div>
 </section>
-
-<!-- ── EXPERIENCE ── -->
 <section class="section" id="experience">
   <div class="section-label">// experience</div>
   <h2 class="section-title">Experience</h2>
   <div class="exp-list">
-
     <div class="exp-card">
-      <div class="exp-date">Aug 2025 –<br>Dec 2025</div>
+      <div class="exp-date">Aug 2025 –<br>May 2026</div>
       <div class="exp-body">
-        <h3>UF Pathfinder Fellow</h3>
+        <h3>Pathfinder Fellow — Graduate Research Assistant</h3>
         <div class="exp-org">University of Florida — Gainesville, FL</div>
-        <p>Developed 3D reconstruction and autonomous navigation pipelines for greenhouse agricultural robots using ROS2, Nav2, Azure Kinect, and Open3D/Cupoch point cloud processing.</p>
+        <p>3D reconstruction of vanilla greenhouse with monocular-camera AI (VGGT, Pi3) vs traditional SLAM/TSDF (Cupoch/Open3D, NVBlox, GPS SLAM) for Azure Kinect RGB-D camera. Prototyped FreeCAD vanilla pollination end effector and Unreal/Isaac Sim airflow simulation.</p>
+        <a href="https://github.com/ajc3xc/Greenhouse_Mapping" class="exp-link" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
-
     <div class="exp-card">
-      <div class="exp-date">Jan 2025 –<br>Present</div>
+      <div class="exp-date">Dec 2024 –<br>Aug 2025</div>
       <div class="exp-body">
-        <h3>Graduate Research Assistant</h3>
+        <h3>Graduate Assistant — INSPIRE Lab</h3>
         <div class="exp-org">Missouri S&amp;T — Rolla, MO</div>
-        <p>Thesis research on AI-driven crack width measurement in SHM imagery. Developed annotation tools, segmentation pipelines, and geometric width estimation methods. Advised by faculty in civil and computer engineering.</p>
+        <p>Built a unified crack midline and width evaluation PyQt5 annotator/pipeline comparing baseline segmentation (SAM3, HrSegNet, CrackScopeNet) and width estimation methods for complex crack geometry. Multi-cue centerline extraction pipeline; transfer learning experiments for HrSegNet raising crack IoU from ~0% to 7.49% on a challenging benchmark.</p>
+        <a href="https://github.com/ajc3xc/crack-segmentation-tool" class="exp-link" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
-
     <div class="exp-card">
-      <div class="exp-date">Aug 2024 –<br>Jan 2025</div>
+      <div class="exp-date">Dec 2022 –<br>Dec 2024</div>
       <div class="exp-body">
-        <h3>Student Contractor</h3>
-        <div class="exp-org">USGS National Geospatial Technical Operations Center — Remote</div>
-        <p>Continued hydrography deep learning research. Contributed to CAGIS-UCGIS 2024 publication on adaptive K-means fine-tuning for U-Net hydrography extraction.</p>
+        <h3>Deep Learning Student Contractor</h3>
+        <div class="exp-org">United States Geological Survey — Remote</div>
+        <p>Developed arcpy and geopandas workflows for the National Map, automated 10TB AK HUC12 data processing for CNN inputs, D-infinity augmentation for connectivity improvement, S3 sinuosity metric animations with audified piano score. 6 co-authored publications.</p>
+        <a href="https://pubs.usgs.gov/publication/70250212" class="exp-link" target="_blank" rel="noopener">USGS Publication</a>
       </div>
     </div>
-
     <div class="exp-card">
       <div class="exp-date">May 2024 –<br>Aug 2024</div>
       <div class="exp-body">
-        <h3>Intern</h3>
-        <div class="exp-org">USGS National Geospatial Technical Operations Center — Denver, CO</div>
-        <p>Developed transfer learning pipelines for hydrographic feature extraction from IfSAR data in Alaska. Co-authored GIScience 2023 and subsequent publications on geospatial deep learning.</p>
+        <h3>Intern — Department of Oncology</h3>
+        <div class="exp-org">Washington University School of Medicine — St. Louis, MO</div>
+        <p>Analyzed pilot study of novel cancer detection via circRNA in urine for 110 samples. Discovered significant differences in cancer vs healthy genes. Built pipelines for CircExplorer, featureCounts, edgeR analysis, and EDA between linear and circular RNA.</p>
+        <a href="https://github.com/ajc3xc/wustl_research" class="exp-link" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
-
     <div class="exp-card">
-      <div class="exp-date">Aug 2024 –<br>Dec 2024</div>
-      <div class="exp-body">
-        <h3>Graduate Teaching Assistant</h3>
-        <div class="exp-org">Missouri S&amp;T — Rolla, MO</div>
-        <p>Assisted with course instruction, grading, and student support for upper-division computer science coursework.</p>
-      </div>
-    </div>
-
-    <div class="exp-card">
-      <div class="exp-date">2022 –<br>2024</div>
+      <div class="exp-date">May 2024 –<br>Present</div>
       <div class="exp-body">
         <h3>Founder &amp; CTO</h3>
-        <div class="exp-org">REDACTED — Rolla, MO</div>
-        <p>Co-founded agricultural robotics startup. Led all technical development of autonomous pollination systems including robot navigation, computer vision, and control systems, alongside fundraising and business development.</p>
+        <div class="exp-org">REDACTED / REDACTED — Remote</div>
+        <p>Handheld multi-sensor crop disease detection platform for tropical smallholder farmers. REDACTED validated. 1st place NW MO State New Venture Pitch Competition 2025. Led sensor fusion architecture, embedded ML pipeline, and business development.</p>
       </div>
     </div>
-
+    <div class="exp-card">
+      <div class="exp-date">Jan 2022 –<br>May 2023</div>
+      <div class="exp-body">
+        <h3>Assistant Researcher</h3>
+        <div class="exp-org">Intelligent Systems Center — Missouri S&amp;T</div>
+        <p>Assisted in creation of smart factory of Additive Manufacturing CNC machines. Prototyped IoT data pipeline to AWS (S3, DynamoDB, Analytics, CloudWatch). Built Cloudflare + Node-RED server on Raspberry Pi for remote sensor monitoring.</p>
+        <a href="https://github.com/ajc3xc/ISC-Research" class="exp-link" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-date">Sep 2022 –<br>May 2024</div>
+      <div class="exp-body">
+        <h3>EECS Head of Department</h3>
+        <div class="exp-org">Sustainable Engineering Design Team — Missouri S&amp;T</div>
+        <p>Drafted Vertical Farming Feasibility Study. Built team WordPress website. Prototyped Docker + Grafana greenhouse dashboard using Mini PC and ESP32. Ran IoT and backend tutorials for team members across multiple semesters.</p>
+        <a href="https://github.com/MST-Sustainable-Engineering" class="exp-link" target="_blank" rel="noopener">Org GitHub</a>
+        <a href="https://github.com/ajc3xc/wordpress-website" class="exp-link" target="_blank" rel="noopener">WordPress Repo</a>
+      </div>
+    </div>
   </div>
 </section>
-
-<!-- ── CONTACT ── -->
 <section class="section" id="contact">
   <div class="section-label">// contact</div>
   <h2 class="section-title">Get in Touch</h2>
   <div class="contact-grid">
-    <div class="contact-card">
-      <div class="c-label">Email</div>
-      <a href="mailto:ajc123private@gmail.com">ajc123private@gmail.com</a>
-    </div>
-    <div class="contact-card">
-      <div class="c-label">GitHub</div>
-      <a href="https://github.com/ajc3xc" target="_blank" rel="noopener">github.com/ajc3xc</a>
-    </div>
-    <div class="contact-card">
-      <div class="c-label">LinkedIn</div>
-      <a href="https://linkedin.com/in/adam-camerer" target="_blank" rel="noopener">adam-camerer</a>
-    </div>
-    <div class="contact-card">
-      <div class="c-label">Location</div>
-      <span style="font-size:0.9rem;font-weight:600;color:var(--text)">Gainesville, FL</span>
-    </div>
+    <div class="contact-card"><div class="c-label">Email</div><a href="mailto:ajc123private@gmail.com">ajc123private@gmail.com</a></div>
+    <div class="contact-card"><div class="c-label">GitHub</div><a href="https://github.com/ajc3xc" target="_blank" rel="noopener">github.com/ajc3xc</a></div>
+    <div class="contact-card"><div class="c-label">LinkedIn</div><a href="https://linkedin.com/in/adam-camerer" target="_blank" rel="noopener">adam-camerer</a></div>
+    <div class="contact-card"><div class="c-label">Meridian</div><a href="https://usemeridian.us" target="_blank" rel="noopener">usemeridian.us</a></div>
+    <div class="contact-card"><div class="c-label">Location</div><span>Gainesville, FL</span></div>
   </div>
 </section>
-
 <footer>
-  <p>Adam Camerer &mdash; ajc3xc.github.io &mdash; built with HTML/CSS, hosted on GitHub Pages</p>
+  <p>Adam Camerer &mdash; <a href="https://ajc3xc.github.io">ajc3xc.github.io</a> &mdash; built with HTML/CSS, hosted on GitHub Pages</p>
 </footer>
-
 <script>
+  let activeFilter = 'all';
+  function setFilter(btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.cat;
+    filterProjects();
+  }
+  function filterProjects() {
+    const q = document.getElementById('search').value.toLowerCase().trim();
+    const cards = document.querySelectorAll('.project-card');
+    let visible = 0;
+    cards.forEach(card => {
+      const catMatch = activeFilter === 'all' || card.dataset.cat === activeFilter;
+      const searchMatch = !q || (card.dataset.search || '').includes(q) || card.textContent.toLowerCase().includes(q);
+      if (catMatch && searchMatch) { card.classList.remove('hidden'); visible++; }
+      else card.classList.add('hidden');
+    });
+    document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+  }
   function toggleBibtex(btn) {
     const pre = btn.closest('.pub-card').querySelector('.pub-bibtex');
     pre.classList.toggle('open');
     btn.textContent = pre.classList.contains('open') ? 'Hide BibTeX' : 'BibTeX';
   }
 </script>
-
 </body>
 </html>
